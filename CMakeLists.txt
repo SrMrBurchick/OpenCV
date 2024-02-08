@@ -10,5 +10,7 @@ set(OpenCV_DIR ${PROJECT_SOURCE_DIR}/External/OpenCV/build)
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
+add_compile_definitions(IMAGE_PATH="${PROJECT_SOURCE_DIR}/taitake.png")
+
 add_executable(${PROJECT_NAME} ./Sources/Private/main.cpp)
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} )

@@ -11,6 +11,11 @@ find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 add_compile_definitions(IMAGE_PATH="${PROJECT_SOURCE_DIR}/taitake.png")
+add_compile_definitions(VIDEO_PATH="${PROJECT_SOURCE_DIR}/Popusk_v6.mp4")
 
-add_executable(${PROJECT_NAME} ./Sources/Private/main.cpp)
+
+add_executable(Test ./Sources/Private/main.cpp)
+
+add_executable(${PROJECT_NAME} ./Sources/Private/TrackingPopusk.cpp)
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} )
+target_link_libraries(Test ${OpenCV_LIBS})
